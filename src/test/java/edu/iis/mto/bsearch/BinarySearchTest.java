@@ -1,11 +1,9 @@
 package edu.iis.mto.bsearch;
 
-import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Arrays;
-
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class BinarySearchTest {
 
@@ -16,7 +14,7 @@ public class BinarySearchTest {
         int searchElement = 8;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        Assert.assertEquals(true, result.isFound());
+        assertThat(result.isFound(),is(true));
 
     }
 
@@ -27,8 +25,7 @@ public class BinarySearchTest {
         int searchElement = 5;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        Assert.assertEquals(false, result.isFound());
-
+        assertThat(result.isFound(),is(false));
     }
 
     @Test
@@ -38,8 +35,8 @@ public class BinarySearchTest {
         int searchElement = 1;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        Assert.assertEquals(true, result.isFound());
-        Assert.assertEquals(1,result.getPosition());
+        assertThat(result.isFound(),is(true));
+        assertThat(result.getPosition(),is(1));
     }
 
     @Test
@@ -49,8 +46,8 @@ public class BinarySearchTest {
         int searchElement = 60;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        Assert.assertEquals(true, result.isFound());
-        Assert.assertEquals(8,result.getPosition());
+        assertThat(result.isFound(),is(true));
+        assertThat(result.getPosition(),is(8));
     }
 
     @Test
@@ -59,9 +56,8 @@ public class BinarySearchTest {
         int searchElement = 7;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        Assert.assertEquals(true, result.isFound());
-        Assert.assertEquals(5,result.getPosition());
-
+        assertThat(result.isFound(),is(true));
+        assertThat(result.getPosition(),is(5));
     }
 
     @Test
@@ -71,7 +67,15 @@ public class BinarySearchTest {
         int searchElement = 0;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        Assert.assertEquals(false, result.isFound());
+        assertThat(result.isFound(),is(false));
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowIllegalArgumnetExceptionIfSeguenceIsEmpty(){
+        int [] sequence = {};
+        int searchElement = 0;
+
+        BinarySearch.search(searchElement, sequence);
     }
 
 }
