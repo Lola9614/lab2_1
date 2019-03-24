@@ -67,6 +67,11 @@ public class BinarySearchTest {
     @Test
     public void sequneceShouldHaveMoreThanOneItemAndSearchElementIsNotInIt() {
 
+        int[] sequence = {1,4,5,6,7,8,10,22,60};
+        int searchElement = 0;
+
+        SearchResult result = BinarySearch.search(searchElement, sequence);
+        Assert.assertEquals(false, result.isFound());
     }
 
 }
