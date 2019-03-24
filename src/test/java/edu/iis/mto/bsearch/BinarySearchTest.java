@@ -24,6 +24,15 @@ public class BinarySearchTest {
     @Test
     public void sequenceShouldHaveOneItemAndSearchElementIsNotInIt() {
 
+        int[] sequence = {8};
+        int searchElement = 5;
+
+        Assert.assertEquals(1, sequence.length);
+
+        SearchResult result = BinarySearch.search(searchElement, sequence);
+
+        Assert.assertEquals(false, result.isFound());
+
     }
 
     @Test
