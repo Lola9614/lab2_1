@@ -51,8 +51,8 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsInMiddle() {
-        int[] sequence = {1,4,5,6,7,8,10,22,60};
+    public void sequenceShouldHaveMoreThanOneItemAndEvenSizeOfItAndSearchElementIsInMiddle() {
+        int[] sequence = {1,4,5,6,7,8,9,10,22,60};
         int searchElement = 7;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
@@ -61,7 +61,17 @@ public class BinarySearchTest {
     }
 
     @Test
-    public void sequneceShouldHaveMoreThanOneItemAndSearchElementIsNotInIt() {
+    public void sequenceShouldHaveMoreThanOneItemAndOddSizeOfItAndSearchElementIsInMiddle() {
+        int[] sequence = {1,4,5,6,7,2,8,10,22,60};
+        int searchElement = 7;
+
+        SearchResult result = BinarySearch.search(searchElement, sequence);
+        assertThat(result.isFound(),is(true));
+        assertThat(result.getPosition(),is(5));
+    }
+
+    @Test
+    public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsNotInIt() {
 
         int[] sequence = {1,4,5,6,7,8,10,22,60};
         int searchElement = 0;
