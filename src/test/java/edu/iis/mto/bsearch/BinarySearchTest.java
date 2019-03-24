@@ -14,7 +14,7 @@ public class BinarySearchTest {
         int searchElement = 8;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        assertThat(result.isFound(),is(true));
+        assertThat(result.isFound(), is(true));
 
     }
 
@@ -25,64 +25,64 @@ public class BinarySearchTest {
         int searchElement = 5;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        assertThat(result.isFound(),is(false));
+        assertThat(result.isFound(), is(false));
     }
 
     @Test
     public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsFirst() {
 
-        int[] sequence = {1,4,6,7,8,10,22,60};
+        int[] sequence = {1, 4, 6, 7, 8, 10, 22, 60};
         int searchElement = 1;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        assertThat(result.isFound(),is(true));
-        assertThat(result.getPosition(),is(1));
+        assertThat(result.isFound(), is(true));
+        assertThat(result.getPosition(), is(1));
     }
 
     @Test
     public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsLast() {
 
-        int[] sequence = {1,4,6,7,8,10,22,60};
+        int[] sequence = {1, 4, 6, 7, 8, 10, 22, 60};
         int searchElement = 60;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        assertThat(result.isFound(),is(true));
-        assertThat(result.getPosition(),is(8));
+        assertThat(result.isFound(), is(true));
+        assertThat(result.getPosition(), is(8));
     }
 
     @Test
     public void sequenceShouldHaveMoreThanOneItemAndEvenSizeOfItAndSearchElementIsInMiddle() {
-        int[] sequence = {1,4,5,6,7,8,9,10,22,60};
+        int[] sequence = {1, 4, 5, 6, 7, 8, 9, 10, 22, 60};
         int searchElement = 7;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        assertThat(result.isFound(),is(true));
-        assertThat(result.getPosition(),is(5));
+        assertThat(result.isFound(), is(true));
+        assertThat(result.getPosition(), is(5));
     }
 
     @Test
     public void sequenceShouldHaveMoreThanOneItemAndOddSizeOfItAndSearchElementIsInMiddle() {
-        int[] sequence = {1,4,5,6,7,2,8,10,22,60};
+        int[] sequence = {1, 4, 5, 6, 7, 2, 8, 10, 22, 60};
         int searchElement = 7;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        assertThat(result.isFound(),is(true));
-        assertThat(result.getPosition(),is(5));
+        assertThat(result.isFound(), is(true));
+        assertThat(result.getPosition(), is(5));
     }
 
     @Test
     public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsNotInIt() {
 
-        int[] sequence = {1,4,5,6,7,8,10,22,60};
+        int[] sequence = {1, 4, 5, 6, 7, 8, 10, 22, 60};
         int searchElement = 0;
 
         SearchResult result = BinarySearch.search(searchElement, sequence);
-        assertThat(result.isFound(),is(false));
+        assertThat(result.isFound(), is(false));
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowIllegalArgumnetExceptionIfSeguenceIsEmpty(){
-        int [] sequence = {};
+    public void shouldThrowIllegalArgumnetExceptionIfSeguenceIsEmpty() {
+        int[] sequence = {};
         int searchElement = 0;
 
         BinarySearch.search(searchElement, sequence);
