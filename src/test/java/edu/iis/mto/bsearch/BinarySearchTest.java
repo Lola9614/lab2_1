@@ -1,5 +1,6 @@
 package edu.iis.mto.bsearch;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -9,30 +10,39 @@ public class BinarySearchTest {
     @Test
     public void sequenceShouldHaveOneItemAndSearchElementIsInIt() {
 
-    }
+        int[] sequence = {8};
+        int searchElement = 8;
 
-    @Test
-    public void sequenceShouldHaveOneItemAndSearchElementIsNotInIt(){
+        Assert.assertEquals(1, sequence.length);
 
-    }
+        SearchResult result = BinarySearch.search(searchElement, sequence);
 
-    @Test
-    public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsFirst(){
-
-    }
-
-    @Test
-    public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsLast(){
+        Assert.assertEquals(true, result.isFound());
 
     }
 
     @Test
-    public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsInMiddle(){
+    public void sequenceShouldHaveOneItemAndSearchElementIsNotInIt() {
 
     }
 
     @Test
-    public void sequneceShouldHaveMoreThanOneItemAndSearchElementIsNotInIt(){
+    public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsFirst() {
+
+    }
+
+    @Test
+    public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsLast() {
+
+    }
+
+    @Test
+    public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsInMiddle() {
+
+    }
+
+    @Test
+    public void sequneceShouldHaveMoreThanOneItemAndSearchElementIsNotInIt() {
 
     }
 
