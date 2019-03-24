@@ -45,6 +45,12 @@ public class BinarySearchTest {
     @Test
     public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsLast() {
 
+        int[] sequence = {1,4,6,7,8,10,22,60};
+        int searchElement = 60;
+
+        SearchResult result = BinarySearch.search(searchElement, sequence);
+        Assert.assertEquals(true, result.isFound());
+        Assert.assertEquals(8,result.getPosition());
     }
 
     @Test
