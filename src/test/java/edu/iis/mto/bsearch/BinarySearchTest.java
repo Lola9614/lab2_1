@@ -55,6 +55,12 @@ public class BinarySearchTest {
 
     @Test
     public void sequenceShouldHaveMoreThanOneItemAndSearchElementIsInMiddle() {
+        int[] sequence = {1,4,5,6,7,8,10,22,60};
+        int searchElement = 7;
+
+        SearchResult result = BinarySearch.search(searchElement, sequence);
+        Assert.assertEquals(true, result.isFound());
+        Assert.assertEquals(5,result.getPosition());
 
     }
 
